@@ -32,4 +32,20 @@ export class UsuariosStateService {
       });
     });
   }
+  postCreateUsuario(usuario: Usuario): Observable<Usuario> {
+    return new Observable<Usuario>((obs) => {
+      this.httpClient.post(this.endpoint, usuario).subscribe({
+        next: (data: any) => {
+          obs.next(data);
+        },
+        complete: () => {
+          obs.complete();
+        },
+        error: (e) => {
+          obs.error();
+          console.log(e);
+        },
+      });
+    });
+  }
 }

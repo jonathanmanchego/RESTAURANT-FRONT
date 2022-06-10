@@ -1,3 +1,4 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -5,7 +6,19 @@ import { PanelConfigurationsRoutingModule } from './panel-configurations-routing
 import { ListUsuariosComponent } from './usuarios/list-usuarios/list-usuarios.component';
 import { CreateUsuariosComponent } from './usuarios/create-usuarios/create-usuarios.component';
 import { TableroUsuariosComponent } from './usuarios/tablero-usuarios/tablero-usuarios.component';
-import { MatTable, MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+
+const MATERIAL_MODULES = [
+  MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatTableModule,
+  MatIconModule
+];
 
 @NgModule({
   declarations: [
@@ -13,6 +26,12 @@ import { MatTable, MatTableModule } from '@angular/material/table';
     CreateUsuariosComponent,
     TableroUsuariosComponent,
   ],
-  imports: [CommonModule, PanelConfigurationsRoutingModule, MatTableModule],
+  imports: [
+    CommonModule,
+    ...MATERIAL_MODULES,
+    FormsModule,
+    ReactiveFormsModule,
+    PanelConfigurationsRoutingModule,
+  ],
 })
 export class PanelConfigurationsModule {}

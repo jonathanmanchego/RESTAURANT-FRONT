@@ -1,1 +1,52 @@
-<p>create-usuarios works!</p>
+<div class="content px-3">
+  <form class="w-100" [formGroup]="form" (ngSubmit)="saveUser()">
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Primer nombre:</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="firstName"
+          required
+        />
+        <mat-error *ngIf="getErrorMessageFromFormField('firstName')">{{
+          getErrorMessageFromFormField("firstName")
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Apellido:</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="lastName"
+          required
+        />
+        <mat-error *ngIf="getErrorMessageFromFormField('lastName')">{{
+          getErrorMessageFromFormField("lastName")
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field appearance="fill">
+        <mat-label>Enter your email</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="email"
+          required
+        />
+        <mat-error *ngIf="getErrorMessageFromFormField('email')">{{
+          getErrorMessageFromFormField("email")
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button type="submit" mat-raised-button color="primary">
+        <mat-icon>save</mat-icon>
+        <span>Guardar</span>
+      </button>
+    </div>
+  </form>
+</div>

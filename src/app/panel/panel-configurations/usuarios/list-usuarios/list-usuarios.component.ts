@@ -10,7 +10,7 @@ import { UsuariosStateService } from 'src/app/state/servicios/usuarios.state.ser
 })
 export class ListUsuariosComponent implements OnInit {
   usuarios: MatTableDataSource<Usuario> = new MatTableDataSource<Usuario>([]);
-  displayedColumns: string[] = ['position', 'firstName', 'lastName', 'email'];
+  displayedColumns: string[] = ['position', 'fullName', 'email'];
   constructor(private readonly usuariosStateService: UsuariosStateService) {}
 
   ngOnInit(): void {

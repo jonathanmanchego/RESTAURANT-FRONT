@@ -1,1 +1,14 @@
-<p>panel works!</p>
+<mat-drawer-container class="content-principal" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <app-drawer-restaurant></app-drawer-restaurant>
+  </mat-drawer>
+
+  <div class="content-principal">
+    <app-navbar-restaurant
+      (buttonDrawer)="toogleDrawer(drawer)"
+    ></app-navbar-restaurant>
+    <div class="w-100">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</mat-drawer-container>

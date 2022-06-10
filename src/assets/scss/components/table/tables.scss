@@ -1,0 +1,24 @@
+.table-custom-restaurant {
+  background-color: transparent;
+
+  thead {
+    background-color: rgb(47, 115, 225) !important;
+
+    tr {
+      th {
+        color: white;
+        font-weight: bold;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      border-bottom: 1px solid #555;
+
+      td {
+        color: black;
+      }
+    }
+  }
+}
