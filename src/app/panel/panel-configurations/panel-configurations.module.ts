@@ -11,13 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { PanelConfigurationsComponent } from './panel-configurations.component';
+import { DashboardPanelConfigurationsComponent } from './dashboard-panel-configurations/dashboard-panel-configurations.component';
 
 const MATERIAL_MODULES = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
   MatTableModule,
-  MatIconModule
+  MatIconModule,
 ];
 
 @NgModule({
@@ -25,6 +27,8 @@ const MATERIAL_MODULES = [
     ListUsuariosComponent,
     CreateUsuariosComponent,
     TableroUsuariosComponent,
+    PanelConfigurationsComponent,
+    DashboardPanelConfigurationsComponent,
   ],
   imports: [
     CommonModule,

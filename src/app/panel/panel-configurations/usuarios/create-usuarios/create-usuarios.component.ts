@@ -21,10 +21,10 @@ export class CreateUsuariosComponent implements OnInit {
     const control = this.form.get(field);
     if (control) {
       if (control.hasError('required')) {
-        return 'You must enter a value';
+        return 'Debe ingresar un valor';
       }
       if (control.hasError('email')) {
-        return 'Not a valid email';
+        return 'No es un correo valido';
       }
     }
     return '';
@@ -34,10 +34,8 @@ export class CreateUsuariosComponent implements OnInit {
       const usuarioToSave: Usuario = {
         ...this.form.value,
       };
-      this.usuariosStateService.postCreateUsuario(usuarioToSave).subscribe({
-        next: (data: Usuario) => {
-
-        },
+      this.usuariosStateService.create(usuarioToSave).subscribe({
+        next: (data: Usuario) => {},
         complete: () => {},
         error: () => {},
       });

@@ -11,6 +11,8 @@ import { DrawerRestaurantComponent } from './elements-layout/drawer-restaurant/d
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 const MATERIAL_MODULES = [
   MatSidenavModule,
@@ -18,6 +20,8 @@ const MATERIAL_MODULES = [
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
+  MatListModule,
+  MatDividerModule,
 ];
 @NgModule({
   declarations: [

@@ -1,51 +1,16 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { StateService } from 'src/app/services/state.service';
 import { Usuario } from '../interfaces/usuario';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UsuariosStateService {
-  endpoint = 'http://localhost:3000/api/usuarios';
-  constructor(private httpClient: HttpClient) {}
-
-  getUsuarios(): Observable<Usuario[]> {
-    return new Observable<Usuario[]>((obs) => {
-      this.httpClient.get(this.endpoint).subscribe({
-        next: (data: any) => {
-          const newData: Usuario[] = data.map((item: any) => ({
-            id: item.id,
-            firstName: item.firstName,
-            lastName: item.lastName,
-            email: item.email,
-          }));
-          obs.next(newData);
-        },
-        complete: () => {
-          obs.complete();
-        },
-        error: (e) => {
-          obs.error();
-          console.log(e);
-        },
-      });
-    });
-  }
-  postCreateUsuario(usuario: Usuario): Observable<Usuario> {
-    return new Observable<Usuario>((obs) => {
-      this.httpClient.post(this.endpoint, usuario).subscribe({
-        next: (data: any) => {
-          obs.next(data);
-        },
-        complete: () => {
-          obs.complete();
-        },
-        error: (e) => {
-          obs.error();
-          console.log(e);
-        },
-      });
-    });
+export class UsuariosStateService extends StateService<Usuario> {
+  constructor() {
+    super();
+    this.url = 'api/usuarios';
+    this.http = inject(HttpClient);
   }
 }

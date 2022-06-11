@@ -1,4 +1,4 @@
-import { General } from './general';
+import { General } from '../../interfaces/general';
 
 export interface Usuario extends General {
   firstName: string;

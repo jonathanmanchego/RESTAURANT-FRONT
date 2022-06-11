@@ -1,1 +1,14 @@
-<p>drawer-restaurant works!</p>
+<div class="drawer-container">
+  <div class="drawer-menu">
+    <ng-container *ngFor="let route of routes">
+      <div class="menu-item" [routerLink]="route.path">
+        <div class="menu-item-icon">
+          <mat-icon>{{ route.icon }}</mat-icon>
+        </div>
+        <div class="menu-item-text">
+          {{ route.name }}
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>
