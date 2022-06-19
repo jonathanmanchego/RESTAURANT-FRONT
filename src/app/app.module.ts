@@ -6,8 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { SharedsModule } from './shareds/shareds.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,6 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    SharedsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

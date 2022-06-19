@@ -2,23 +2,24 @@
   background-color: transparent;
 
   thead {
-    background-color: rgb(47, 115, 225) !important;
+    background-color: var(--color-bg-alter3) !important;
 
     tr {
       th {
-        color: white;
+        color: #ddd;
         font-weight: bold;
+        font-size: 1.1rem;
       }
     }
   }
 
   tbody {
     tr {
-      background-color: #333;
+      background-color: #ddd;
       border-bottom: 1px solid #555;
 
       td {
-        color: white;
+        color: #111;
       }
     }
   }

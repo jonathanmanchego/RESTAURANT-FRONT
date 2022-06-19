@@ -13,6 +13,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { PanelConfigurationsComponent } from './panel-configurations.component';
 import { DashboardPanelConfigurationsComponent } from './dashboard-panel-configurations/dashboard-panel-configurations.component';
+import { SharedsModule } from 'src/app/shareds/shareds.module';
 
 const MATERIAL_MODULES = [
   MatButtonModule,
@@ -34,6 +35,7 @@ const MATERIAL_MODULES = [
     CommonModule,
     ...MATERIAL_MODULES,
     FormsModule,
+    SharedsModule,
     ReactiveFormsModule,
     PanelConfigurationsRoutingModule,
   ],

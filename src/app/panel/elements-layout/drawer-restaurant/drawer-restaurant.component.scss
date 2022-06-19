@@ -2,26 +2,67 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-bg-alter4);
   padding: 20px;
   position: relative;
   overflow: hidden;
-}
 
-.drawer-menu {
-  display: flex;
-  flex-direction: column;
-  justify-content: stretch;
-  width: 100%;
+  .drawer-profile-picture {
+    width: 100px;
+    height: 100px;
 
-  .menu-item {
-    flex: 1;
+    .profile-picture {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: rgb(12, 72, 145);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        color: white;
+        font-weight: bold;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .drawer-menu {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    flex-direction: column;
+    justify-content: stretch;
+    margin-top: 2rem;
+    width: 100%;
+
+    .menu-item {
+      flex: 1;
+      padding: 1rem .2rem;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      border-radius: 4px;
+      gap: 0 .5rem;
+      cursor: default;
+      transition: background-color .2s ease;
+
+      .menu-item-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .menu-item-text {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: black;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.197);
+      }
+    }
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/state/interfaces/usuario';
 import { UsuariosStateService } from 'src/app/state/servicios/usuarios.state.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-usuarios',
@@ -14,6 +15,7 @@ export class CreateUsuariosComponent implements OnInit {
     lastName: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
   });
+  loading = false;
   constructor(private readonly usuariosStateService: UsuariosStateService) {}
 
   ngOnInit(): void {}
@@ -34,10 +36,27 @@ export class CreateUsuariosComponent implements OnInit {
       const usuarioToSave: Usuario = {
         ...this.form.value,
       };
+      this.loading = true;
       this.usuariosStateService.create(usuarioToSave).subscribe({
         next: (data: Usuario) => {},
-        complete: () => {},
-        error: () => {},
+        complete: () => {
+          this.loading = false;
+          Swal.fire({
+            title: 'Bien hecho!',
+            text: 'El usuario se ha creado correctamente',
+            icon: 'success',
+            timer: 2000,
+          });
+        },
+        error: () => {
+          this.loading = false;
+          Swal.fire({
+            title: 'Error!',
+            text: 'El usuario no se ha creado correctamente',
+            icon: 'error',
+            timer: 2000,
+          });
+        },
       });
     }
   }

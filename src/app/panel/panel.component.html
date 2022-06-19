@@ -1,5 +1,5 @@
 <mat-drawer-container class="content-principal" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
+  <mat-drawer #drawer class="sidenav-principal" mode="side">
     <app-drawer-restaurant></app-drawer-restaurant>
   </mat-drawer>
 
@@ -7,7 +7,7 @@
     <app-navbar-restaurant
       (buttonDrawer)="toogleDrawer(drawer)"
     ></app-navbar-restaurant>
-    <div class="w-100">
+    <div class="container-total">
       <router-outlet></router-outlet>
     </div>
   </div>
