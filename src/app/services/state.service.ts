@@ -70,4 +70,20 @@ export abstract class StateService<Type extends General> {
         });
     });
   }
+  delete(id: number): Observable<Type> {
+    return new Observable((observer) => {
+      this.http.delete(`${this.pathBackend + this.url}/${id}`).subscribe({
+        next: (deleted: any) => {
+          const item = deleted as Type;
+          this.map.delete(item.id);
+          observer.next(item);
+          this.subjectToUpdate.next(true);
+        },
+        complete: () => observer.complete(),
+        error: (error) => {
+          observer.error(error);
+        },
+      });
+    });
+  }
 }

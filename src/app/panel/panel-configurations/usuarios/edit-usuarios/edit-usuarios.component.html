@@ -1,0 +1,47 @@
+<app-spinner-restaurant *ngIf="loading"></app-spinner-restaurant>
+<div class="content px-3">
+  <h2 class="text-center title-form">Actualizar Usuario</h2>
+  <form class="w-100" [formGroup]="form" (ngSubmit)="saveUser()">
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Nombre:</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="firstName"
+        />
+        <mat-error *ngIf="getErrorMessageFromFormField('firstName')">{{
+          getErrorMessageFromFormField("firstName")
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Apellido:</mat-label>
+        <input
+          matInput
+          placeholder="pat@example.com"
+          formControlName="lastName"
+        />
+        <mat-error *ngIf="getErrorMessageFromFormField('lastName')">{{
+          getErrorMessageFromFormField("lastName")
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <mat-form-field class="w-100" appearance="fill">
+        <mat-label>Correo:</mat-label>
+        <input matInput placeholder="pat@example.com" formControlName="email" />
+        <mat-error *ngIf="getErrorMessageFromFormField('email')">{{
+          getErrorMessageFromFormField("email")
+        }}</mat-error>
+      </mat-form-field>
+    </div>
+    <div class="col-12">
+      <button type="submit" mat-raised-button color="primary">
+        <mat-icon>save</mat-icon>
+        <span>Guardar</span>
+      </button>
+    </div>
+  </form>
+</div>

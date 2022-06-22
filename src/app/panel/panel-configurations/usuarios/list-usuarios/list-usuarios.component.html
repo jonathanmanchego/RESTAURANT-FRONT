@@ -23,6 +23,25 @@
         {{ element.email }}
       </td>
     </ng-container>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let element" class="text-center">
+        <button
+          mat-icon-button
+          class="btn-restaurant-panel-edit"
+          (click)="editUser(element)"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          class="btn-restaurant-panel-destroy"
+          (click)="deleteUser(element.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
